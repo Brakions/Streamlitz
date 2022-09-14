@@ -19,20 +19,20 @@ st.title("Proyecto individual")
 st.markdown("###### ***Pandas-Streamlit***")
 st.subheader("Pregunta 1")
 if st.checkbox(" Año con más carreras"):
-    if  st.button("Año | Veces"):
+    if  st.button("Año | Carreras"):
         st.write(races.value_counts("year").head(1))
 st.subheader("Pregunta 2")
 if st.checkbox("Piloto con mayor cantidad de primeros puestos"):
-    if  st.button("ID | Veces"):
+    if  st.button("ID | Primeros puestos"):
         st.write(result[result["position"]=="1"].value_counts("driverId").head(1))
         st.markdown("###### Id   , Veces")
-    if  st.button("Piloto"):
+    if  st.button("Piloto INFO"):
         st.write(drivers[drivers["driverId"]==1])
         
 #st.markdown("###### ***Piloto con mayor cantidad de primeros puestos***")
 st.subheader("Pregunta 3")
 if st.checkbox("Nombre del circuito más corrido"):
-    if  st.button("Nombre | Veces"):
+    if  st.button("Nombre | Veces recorrido"):
         st.write(races.value_counts("name").head(1))
 #st.markdown("###### ***Nombre del circuito más corrido***")
 st.subheader("Pregunta 4")
@@ -68,7 +68,7 @@ if st.checkbox("Piloto con mayor cantidad de puntos en total, cuyo constructor s
     if  st.button("British"):
         st.write(RB["driverRef"].value_counts("points").head(1))
 
-if st.checkbox("Constructor de piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British"):
+if st.checkbox("Constructor con mayor cantidad de puntos en total"):
     
     if  st.button("American"):
         st.write(CA["constructorRef"].value_counts("points").head(1))
