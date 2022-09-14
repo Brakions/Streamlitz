@@ -11,7 +11,6 @@ drivers=pd.read_csv("datasets\drivers.csv")
 pitstop=pd.read_csv("datasets\pitstop.csv")
 races=pd.read_csv("datasets\daces.csv")
 result=pd.read_csv("datasets\desult.csv")
-#dc=pd.read_csv("datasets\result.csv")
 #dc=pd.read_csv()
 #dc=pd.read_csv()
 
@@ -19,13 +18,24 @@ result=pd.read_csv("datasets\desult.csv")
 st.title("Proyecto individual")
 st.markdown("###### ***Pandas-Streamlit***")
 st.subheader("Pregunta 1")
-st.markdown("###### ***Año con más carreras***")
+if st.checkbox(" Año con más carreras"):
+    if  st.button("Mostrar"):
+        st.write(circuits)
 st.subheader("Pregunta 2")
-st.markdown("###### ***Piloto con mayor cantidad de primeros puestos***")
+if st.checkbox("Piloto con mayor cantidad de primeros puestos"):
+    if  st.button("Mostrar"):
+        st.write("5HEAD")
+#st.markdown("###### ***Piloto con mayor cantidad de primeros puestos***")
 st.subheader("Pregunta 3")
-st.markdown("###### ***Nombre del circuito más corrido***")
+if st.checkbox("Nombre del circuito más corrido"):
+    if  st.button("Mostrar"):
+        st.write("5HEAD")
+#st.markdown("###### ***Nombre del circuito más corrido***")
 st.subheader("Pregunta 4")
-st.markdown("###### ***Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British***")
+if st.checkbox("Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British"):
+    if  st.button("Mostrar"):
+        st.write("5HEAD")
+#st.markdown("###### ***Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British***")
 st.write("***")
 st.write("## Consigna")
 st.markdown("[Repo ](https://github.com/FnegreteHenry/PI01_DATA03)")
