@@ -19,22 +19,61 @@ st.title("Proyecto individual")
 st.markdown("###### ***Pandas-Streamlit***")
 st.subheader("Pregunta 1")
 if st.checkbox(" Año con más carreras"):
-    if  st.button("Mostrar"):
-        st.write(circuits)
+    if  st.button("Año | Veces"):
+        st.write(races.value_counts("year").head(1))
 st.subheader("Pregunta 2")
 if st.checkbox("Piloto con mayor cantidad de primeros puestos"):
-    if  st.button("Mostrar"):
-        st.write("5HEAD")
+    if  st.button("ID | Veces"):
+        st.write(result[result["position"]=="1"].value_counts("driverId").head(1))
+        st.markdown("###### Id   , Veces")
+    if  st.button("Piloto"):
+        st.write(drivers[drivers["driverId"]==1])
+        
 #st.markdown("###### ***Piloto con mayor cantidad de primeros puestos***")
 st.subheader("Pregunta 3")
 if st.checkbox("Nombre del circuito más corrido"):
-    if  st.button("Mostrar"):
-        st.write("5HEAD")
+    if  st.button("Nombre | Veces"):
+        st.write(races.value_counts("name").head(1))
 #st.markdown("###### ***Nombre del circuito más corrido***")
 st.subheader("Pregunta 4")
+#JOIN DE 2 DATASETS
+resul_total=pd.merge(result,drivers, on="driverId")
+#SOLO AMERICAN
+RA=resul_total[resul_total["nationality"]=="American"]
+#SOLO BRITISH
+RB=resul_total[resul_total["nationality"]=="British"]
+#Resultado general piloto con mas puntos
+resul_total["driverRef"].value_counts("points")
+#Resultado piloto con mas puntos(AMERICAN)
+RA["driverRef"].value_counts("points")
+#Resultado piloto con mas puntos(BRITISH)
+RB["driverRef"].value_counts("points")
+#Join de 3 data sets
+result_constructor_total=pd.merge(resul_total,constructor,on="constructorId")
+#SOLO AMERICAN
+CA=result_constructor_total[result_constructor_total["nationality_x"]=="American"]
+#SOLO BRITISH
+CB=result_constructor_total[result_constructor_total["nationality_x"]=="British"]
+#Resultado general constructor con mas puntos
+result_constructor_total["constructorRef"].value_counts("points")
+#Resultado cosntructor con mas puntos(AMERICAN)
+CA["constructorRef"].value_counts("points")
+#Resultado constructor con mas puntos(BRITISH)
+CB["constructorRef"].value_counts("points")
+
 if st.checkbox("Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British"):
-    if  st.button("Mostrar"):
-        st.write("5HEAD")
+    
+    if  st.button("American"):
+        st.write(RA["driverRef"].value_counts("points").head(1))
+    if  st.button("British"):
+        st.write(RB["driverRef"].value_counts("points").head(1))
+
+if st.checkbox("Constructor de piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British"):
+    
+    if  st.button("American"):
+        st.write(CA["constructorRef"].value_counts("points").head(1))
+    if  st.button("British"):
+        st.write(CB["constructorRef"].value_counts("points").head(1))
 #st.markdown("###### ***Piloto con mayor cantidad de puntos en total, cuyo constructor sea de nacionalidad sea American o British***")
 st.write("***")
 st.write("## Consigna")
@@ -64,6 +103,3 @@ if st.checkbox("Races"):
 if st.checkbox("Result"):
     st.dataframe(result.head())
 
-if st.checkbox("vista"):
-  if  st.button("Mostrar"):
-        st.write("5HEAD")
