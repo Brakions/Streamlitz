@@ -6,15 +6,15 @@ from pathlib import Path
 #daces_csv = Path('datasets\daces.csv').parents[1] / "datasets\daces.csv"  
 #daces=pd.read_csv(daces_csv)
 
-constructor_csv = Path("datasets\constructor.csv") 
-drivers_csv = Path("datasets\drivers.csv") 
-daces_csv = Path('datasets\daces.csv')
-result_csv = Path("datasets\desult.csv")
-#circuits_csv = Path("datasets\circuits.csv")
-pitstop_csv = Path("datasets\pitstop.csv")
+constructor_csv = Path("datasets\constructor.csv") .parents[1]/"datasets\constructor.csv"
+drivers_csv = Path("datasets\drivers.csv") .parents[1]/"datasets\drivers.csv"
+daces_csv = Path('datasets\daces.csv').parents[1]/"datasets\daces.csv"
+result_csv = Path("datasets\desult.csv").parents[1]/"datasets\desult.csv"
+circuits_csv = Path("datasets\circuits.csv").parents[1]/"datasets\circuits.csv"
+pitstop_csv = Path("datasets\pitstop.csv").parents[1]/"datasets\pitstop.csv"
 
 #Cargamos los data frame 
-#circuits=pd.read_csv(circuits_csv )
+circuits=pd.read_csv(circuits_csv )
 constructor=pd.read_csv(constructor_csv)
 drivers=pd.read_csv(drivers_csv)
 pitstop=pd.read_csv(pitstop_csv)
