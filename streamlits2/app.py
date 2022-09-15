@@ -1,14 +1,25 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from pathlib import Path
+#Cargamos los data frame de otra manera
+daces_csv = Path('datasets\daces.csv').parents[1] / "datasets\daces.csv"  
+#daces=pd.read_csv(daces_csv)
+
+constructor_csv = Path("datasets\constructor.csv").parents[1] / "datasets\constructor.csv"  
+drivers_csv = Path("datasets\drivers.csv").parents[1] / "datasets\drivers.csv"
+daces_csv = Path('datasets\daces.csv').parents[1] / "datasets\daces.csv"
+result_csv = Path("datasets\desult.csv").parents[1] / "datasets\desult.csv"
+circuits_csv = Path("datasets\circuits.csv").parents[1] / "datasets\circuits.csv"
+pitstop_csv = Path("datasets\pitstop.csv").parents[1] / "datasets\pitstop.csv"
 
 #Cargamos los data frame 
-circuits=pd.read_csv("circuits.csv")
-constructor=pd.read_csv("constructor.csv")
-drivers=pd.read_csv("drivers.csv")
-pitstop=pd.read_csv("pitstop.csv")
-races=pd.read_csv("daces.csv")
-result=pd.read_csv("desult.csv")
+circuits=pd.read_csv(circuits_csv )
+constructor=pd.read_csv(constructor_csv)
+drivers=pd.read_csv(drivers_csv)
+pitstop=pd.read_csv(pitstop_csv)
+races=pd.read_csv(daces_csv)
+result=pd.read_csv(result_csv )
 #dc=pd.read_csv()
 #dc=pd.read_csv()
 
