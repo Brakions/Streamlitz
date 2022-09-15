@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from pathlib import Path
-#Cargamos los data frame de otra manera
+#Utilizamos pathlib para cambiar el Path
 daces_csv = Path('datasets\daces.csv').parents[1] / "datasets\daces.csv"  
 #daces=pd.read_csv(daces_csv)
 
