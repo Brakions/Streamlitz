@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 
 #Cargamos los data frame 
-circuits=pd.read_csv("datasets\circuits.csv")
-constructor=pd.read_csv("datasets\constructor.csv")
-drivers=pd.read_csv("datasets\drivers.csv")
-pitstop=pd.read_csv("datasets\pitstop.csv")
-races=pd.read_csv("datasets\daces.csv")
-result=pd.read_csv("datasets\desult.csv")
+circuits=pd.read_csv("circuits.csv")
+constructor=pd.read_csv("constructor.csv")
+drivers=pd.read_csv("drivers.csv")
+pitstop=pd.read_csv("pitstop.csv")
+races=pd.read_csv("daces.csv")
+result=pd.read_csv("desult.csv")
 #dc=pd.read_csv()
 #dc=pd.read_csv()
 
